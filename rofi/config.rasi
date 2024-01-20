@@ -1,0 +1,32 @@
+configuration {
+    font: "JetBrainsMono NF 14";
+    line-margin: 10;
+
+    display-run:    "";
+    display-drun:   "🔍";
+    show-icons:     true;
+  
+    icon-theme: "Papirus-Dark";
+
+    modes: "drun,window";
+}
+
+
+@theme "~/.config/rofi/dracula.rasi"
+
+listview {
+	lines: 9;
+	columns: 1;
+}
+
+window {
+	width: 30%;
+}
+
+
+
+inputbar {
+     children: [prompt, entry];
+}
+
+/*rofi -show drun -drun-display-format {name}

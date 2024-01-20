@@ -1,0 +1,13 @@
+#TabsToolbar-customization-target { visibility: collapse !important; }
+
+#sidebar-header {
+  display: none;
+}
+
+#sidebar-close {
+  visibility: collapse;
+}
+
+#sidebar-splitter {
+  display: none;
+}
