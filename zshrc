@@ -6,7 +6,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # If you come from bash you might have to change your $PATH.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/luna/.cargo/bin:/home/luna/.dotnet/tools
+export PATH=$HOME/bin:/usr/local/bin:$PATH:/home/luna/.cargo/bin:/home/luna/.dotnet/tools:/home/luna/.ghcup
 
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -29,6 +29,8 @@ alias cam='/run/media/luna/KODAK\ AZ252/DCIM'
 
 alias cr='cargo run'
 alias cb='cargo build'
+alias hr='cabal run'
+alias hb='cabal build'
 alias dr='dotnet run'
 alias db='dotnet build'
 
@@ -48,3 +50,5 @@ source /usr/share/zsh-theme-powerlevel10k/powerlevel10k.zsh-theme
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+[ -f "/home/luna/.ghcup/env" ] && source "/home/luna/.ghcup/env" # ghcup-env

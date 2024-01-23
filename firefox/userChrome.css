@@ -1,3 +1,7 @@
+* {
+  font-family: JetBrainsMono !important;
+}
+
 #TabsToolbar-customization-target { visibility: collapse !important; }
 
 #sidebar-header {
@@ -11,3 +15,64 @@
 #sidebar-splitter {
   display: none;
 }
+
+#nav-bar
+{
+        padding-top: 0.5vh !important;
+} 
+
+#urlbar #urlbar-input {
+  text-align: center !important;
+}
+
+#urlbar-background,
+#urlbar-input-container {
+    --toolbarbutton-border-radius: calc(var(--urlbar-min-height) / 2);
+}
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#personal-bookmarks .bookmark-item[container="true"] .toolbarbutton-icon {
+ display:none!important;
+}
+
+menupopup {
+  --arrowpanel-header-back-icon-padding: 0px;
+  --panel-shadow-margin: 0px;* {
+  font-family: JetBrainsMono !important;
+}
+
+#TabsToolbar-customization-target { visibility: collapse !important; }
+
+#sidebar-header {
+  display: none;
+}
+
+#sidebar-close {
+  visibility: collapse;
+}
+
+#sidebar-splitter {
+  display: none;
+}
+
+#nav-bar
+{
+        padding-top: 0.5vh !important;
+} 
+
+#urlbar #urlbar-input {
+  text-align: center !important;
+}
+
+#urlbar-background,
+#urlbar-input-container {
+    --toolbarbutton-border-radius: calc(var(--urlbar-min-height) / 2);
+}
+
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#personal-bookmarks .bookmark-item[container="true"] .toolbarbutton-icon {
+ display:none!important;
+}
+

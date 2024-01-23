@@ -59,7 +59,7 @@ local plugins = {
         "lua-language-server",
         "omnisharp",
         "lemminx",
-
+        "haskell-language-server"
       }
     }
   },
@@ -89,5 +89,8 @@ local plugins = {
       crates.show()
     end
   },
+  {
+    "JuliaEditorSupport/julia-vim"
+  }
 }
 return plugins
