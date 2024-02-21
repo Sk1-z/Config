@@ -22,6 +22,7 @@ alias g='grep --color=auto'
 alias vim='nvim'
 alias files='ranger'
 alias lg='lazygit'
+alias activity='lua ~/Sync/Code/activity.lua'
 
 alias code='~/Sync/Code'
 alias config='~/Sync/Code/.config'
@@ -29,16 +30,23 @@ alias cam='/run/media/luna/KODAK\ AZ252/DCIM'
 
 alias cr='cargo run'
 alias cb='cargo build'
+alias ca='cargo add'
+alias cc='cargo clean'
+
 alias hr='cabal run'
 alias hb='cabal build'
+alias ha='cabal get'
+alias hc='cabal clean'
+
 alias dr='dotnet run'
 alias db='dotnet build'
+alias da='dotnet add package'
+alias dc='dotnet clean'
 
 alias gs='git status'
 alias gc='git commit -m'
 alias gp='git push'
 alias gpl='git pull'
-
 
 export VISUAL=nvim
 export EDITOR=nvim
