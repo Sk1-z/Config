@@ -214,6 +214,6 @@ bindsym $mod+m focus floating; mode "move"
 
 # Catppuccin-ify the borders of windows
 # class                 border  background text    indicator child_border
-client.focused          #9aa5ce #9aa5ce    #414868 #2ac3de   #2ac3de
-client.focused_inactive #b4befe #b4befe    #414868 #b4befe   #b4befe
-client.unfocused        #c0caf5 #c0caf5    #414868 #c0caf5   #c0caf5
+client.focused          #b4befe #b4befe    #414868 #b4befe   #b4befe
+client.focused_inactive #565f89 #565f89    #b4befe #565f89   #565f89
+client.unfocused        #565f89 #565f89    #b4befe #565f89   #565f89

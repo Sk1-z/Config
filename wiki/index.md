@@ -1,0 +1,1 @@
+/home/luna/Sync/Vaults/Skiwiki/index.md

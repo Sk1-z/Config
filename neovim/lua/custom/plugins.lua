@@ -1,15 +1,7 @@
 local plugins = {
   {
-    "jackMort/ChatGPT.nvim",
-    event = "VeryLazy",
-    config = function()
-      require("chatgpt").setup()
-    end,
-    dependencies = {
-      "MunifTanjim/nui.nvim",
-      "nvim-lua/plenary.nvim",
-      "nvim-telescope/telescope.nvim"
-    }
+    "lervag/wiki.vim",
+    lazy = false
   },
   {
     "wakatime/vim-wakatime",
@@ -17,10 +9,6 @@ local plugins = {
   },
   {
     "lukas-reineke/lsp-format.nvim",
-    lazy = false
-  },
-  {
-    "sheerun/vim-polyglot",
     lazy = false
   },
   {
@@ -43,11 +31,6 @@ local plugins = {
       })
       return M
     end
-  },
-  {
-    "folke/trouble.nvim",
-    lazy = false,
-    dependencies = { "nvim-tree/nvim-web-devicons" },
   },
   {
     "nvimtools/none-ls.nvim",
@@ -100,7 +83,11 @@ local plugins = {
         fmt.on_attach(client, buffnr)
       end
 
+      lspconfig.ltex.setup {}
+
       lspconfig.marksman.setup {}
+
+      lspconfig.texlab.setup {}
 
       lspconfig.lemminx.setup {
         on_attach = on_attach
@@ -158,7 +145,9 @@ local plugins = {
     "williamboman/mason.nvim",
     opts = {
       ensure_installed = {
+        "ltex-ls",
         "marksman",
+        "texlab",
         "lemminx",
         "bash-language-server",
         "asm-lsp",
@@ -174,15 +163,22 @@ local plugins = {
     }
   },
   {
-    "folke/neodev.nvim"
+    "iamcco/markdown-preview.nvim",
+    cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
+    ft = { "markdown" },
+    build = function() vim.fn["mkdp#util#install"]() end,
   },
   {
-    "p00f/clangd_extensions.nvim"
+    "lervag/vimtex",
+    lazy = false,
   },
   {
-    "ellisonleao/glow.nvim",
-    config = true,
-    cmd = "Glow"
+    "folke/trouble.nvim",
+    lazy = false,
+  },
+  {
+    "p00f/clangd_extensions.nvim",
+    lazy = false,
   },
   {
     'mrcjkb/rustaceanvim',
@@ -204,10 +200,6 @@ local plugins = {
       crates.setup(opts)
       crates.show()
     end
-  },
-  {
-    "OrangeT/vim-csharp",
-    ft = "cs"
   },
 }
 return plugins

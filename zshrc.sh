@@ -22,8 +22,10 @@ alias g='grep --color=auto'
 alias vim='nvim'
 alias files='ranger'
 alias lg='lazygit'
+alias tt='toipe'
 alias activity='lua ~/Sync/Code/activity.lua'
 
+alias vault='~/Sync/Vaults/'
 alias code='~/Sync/Code'
 alias config='~/Sync/Code/.config'
 alias cam='/run/media/luna/KODAK\ AZ252/DCIM'
@@ -45,8 +47,6 @@ alias dc='dotnet clean'
 
 alias gs='git status'
 alias gc='git commit -m'
-alias gp='git push'
-alias gpl='git pull'
 
 export VISUAL=nvim
 export EDITOR=nvim
