@@ -19,7 +19,7 @@ exec_always --no-startup-id nm-applet
 bindsym $mod+Shift+s exec shutter -f
 
 # Wallpaper
-exec --no-startup-id feh --bg-scale ~/Pictures/neon.png
+exec --no-startup-id feh --bg-scale ~/Pictures/wallpaper.png
 gaps inner 6
 gaps outer 8
 for_window [class="^.*"] border pixel 4
@@ -76,11 +76,8 @@ bindsym $mod+Return exec kitty
 bindsym $mod+q kill
 
 # rofi
-bindsym $mod+d exec --no-startup-id rofi -show drun
-bindsym $mod+Shift+d exec --no-startup-id rofi -show run
-
-# plasma power menu
-bindsym $mod+p exec --no-startup-id qdbus-qt5 org.kde.ksmserver /KSMServer org.kde.KSMServerInterface.logout -1 -1 -1
+bindsym $mod+d exec rofi -show drun
+bindsym $mod+p exec ~/.config/rofi/powermenu/powermenu.sh
 
 # change focus
 bindsym $mod+h focus left
@@ -214,6 +211,6 @@ bindsym $mod+m focus floating; mode "move"
 
 # Catppuccin-ify the borders of windows
 # class                 border  background text    indicator child_border
-client.focused          #b4befe #b4befe    #414868 #b4befe   #b4befe
-client.focused_inactive #565f89 #565f89    #b4befe #565f89   #565f89
-client.unfocused        #565f89 #565f89    #b4befe #565f89   #565f89
+client.focused          #264662 #264662    #ffffff #264662   #264662
+client.focused_inactive #041418 #041418    #b4befe #041418   #041418
+client.unfocused        #041418 #041418    #b4befe #041418   #041418

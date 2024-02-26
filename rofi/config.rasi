@@ -1,32 +1,48 @@
+/**
+ *
+ * Author : Aditya Shakya (adi1090x)
+ * Github : @adi1090x
+ * 
+ * Configuration For Rofi Version: 1.7.3
+ **/
+
+@theme "launcher/theme.rasi"
+
 configuration {
-    font: "JetBrainsMono NF 14";
-    line-margin: 10;
+	/*---------- General setting ----------*/
+	modi: "drun,filebrowser";
+	case-sensitive: false;
+	cycle: true;
+	filter: "";
+	scroll-method: 0;
+	normalize-match: true;
+	show-icons: true;
+	icon-theme: "Papirus-Dark";
+	steal-focus: false;
 
-    display-run:    "";
-    display-drun:   "🔍";
-    show-icons:     true;
-  
-    icon-theme: "Papirus-Dark";
+	/*---------- Matching setting ----------*/
+	matching: "normal";
+	tokenize: true;
 
-    modes: "drun,window";
+	/*---------- History and Sorting ----------*/
+	disable-history: false;
+	sorting-method: "normal";
+
+    filebrowser {
+	    directory: "/home/luna/";
+      sorting-method:    "name";
+    }
+
+    timeout {
+      action: "kb-cancel";
+      delay:  0;
+    }
+
+	/*---------- Keybindings ----------*/
+  /* Remove wierd binds */
+	kb-remove-char-back: "BackSpace";
+	kb-mode-complete: "";
+	kb-mode-next: "Control+l";
+	kb-mode-previous: "Control+h";
+	kb-mode-complete: "";
 }
-
-
-@theme "~/.config/rofi/dracula.rasi"
-
-listview {
-	lines: 9;
-	columns: 1;
-}
-
-window {
-	width: 30%;
-}
-
-
-
-inputbar {
-     children: [prompt, entry];
-}
-
-/*rofi -show drun -drun-display-format {name}
