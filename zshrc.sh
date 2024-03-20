@@ -23,7 +23,7 @@ alias vim='nvim'
 alias files='ranger'
 alias lg='lazygit'
 alias tt='toipe'
-alias activity='lua ~/Sync/Code/activity.lua'
+alias activity='python ~/Sync/Code/activity.py'
 
 alias vault='~/Sync/Vaults/'
 alias code='~/Sync/Code'

@@ -50,8 +50,12 @@ local plugins = {
 
       local opts = {
         sources = {
+          null_ls.builtins.formatting.mdformat,
+          null_ls.builtins.formatting.typstfmt,
+          null_ls.builtins.formatting.latexindent,
           asmfmt,
           null_ls.builtins.formatting.csharpier,
+          null_ls.builtins.formatting.black
         },
         on_attach = function(client, bufnr)
           vim.api.nvim_clear_autocmds({
@@ -83,15 +87,19 @@ local plugins = {
         fmt.on_attach(client, buffnr)
       end
 
-      lspconfig.ltex.setup {}
+      lspconfig.ltex.setup {
+        filetypes = { "markdown", "typst" }
+      }
 
       lspconfig.marksman.setup {}
 
-      lspconfig.texlab.setup {}
-
-      lspconfig.lemminx.setup {
-        on_attach = on_attach
+      lspconfig.typst_lsp.setup {
+        settings = {
+          exportPdf = "onType"
+        }
       }
+
+      lspconfig.texlab.setup {}
 
       lspconfig.bashls.setup {
         on_attach = on_attach
@@ -108,27 +116,6 @@ local plugins = {
       }
 
       lspconfig.lua_ls.setup {
-        on_init = function(client)
-          local path = client.workspace_folders[1].name
-          if not vim.loop.fs_stat(path .. '/.luarc.json') and not vim.loop.fs_stat(path .. '/.luarc.jsonc') then
-            client.config.settings = vim.tbl_deep_extend('force', client.config.settings, {
-              Lua = {
-                runtime = {
-                  version = 'LuaJIT'
-                },
-                workspace = {
-                  checkThirdParty = false,
-                  library = {
-                    vim.env.VIMRUNTIME
-                  }
-                }
-              }
-            })
-
-            client.notify("workspace/didChangeConfiguration", { settings = client.config.settings })
-          end
-          return true
-        end,
         on_attach = on_attach
       }
 
@@ -139,6 +126,8 @@ local plugins = {
       lspconfig.hls.setup {
         on_attach = on_attach
       }
+
+      lspconfig.pyright.setup {}
     end,
   },
   {
@@ -147,18 +136,21 @@ local plugins = {
       ensure_installed = {
         "ltex-ls",
         "marksman",
+        "mdformat",
+        "typst-lsp",
+        "typstfmt",
         "texlab",
-        "lemminx",
         "bash-language-server",
         "asm-lsp",
         "asmfmt",
         "clangd",
         "clang-format",
         "rust-analyzer",
-        "lua-language-server",
         "omnisharp",
         "csharpier",
-        "haskell-language-server"
+        "haskell-language-server",
+        "pyright",
+        "black"
       }
     }
   },
@@ -167,6 +159,10 @@ local plugins = {
     cmd = { "MarkdownPreviewToggle", "MarkdownPreview", "MarkdownPreviewStop" },
     ft = { "markdown" },
     build = function() vim.fn["mkdp#util#install"]() end,
+  },
+  {
+    "kaarmu/typst.vim",
+    lazy = false
   },
   {
     "lervag/vimtex",

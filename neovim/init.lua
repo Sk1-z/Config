@@ -18,8 +18,9 @@ require "plugins"
 vim.api.nvim_set_keymap('i', '<C-;>', '<Esc>', { noremap = true, silent = true })
 
 vim.api.nvim_exec("au BufRead,BufNewFile *.asm set ft=nasm", false)
-vim.api.nvim_exec("au BufRead,BufNewFile *.h set ft=c", false)
-vim.api.nvim_exec("au BufRead,BufNewFile *.md set syntax=markdown", false)
+vim.api.nvim_exec("au BufRead,BufNewFile *.typ set ft=typst", false)
 
+vim.g.mkdp_browser = "firefox"
 vim.g.wiki_root = "~/Wiki"
+
 vim.g.maplocalleader = " "

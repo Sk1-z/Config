@@ -1,6 +1,5 @@
 # Will create all system links exept for firefox
 d=$(pwd)
-ln -s $d/wiki ~/Wiki/
 ln -s $d/picom.conf ~/.config/picom.conf
 ln -s $d/i3 ~/.config/i3
 ln -s $d/kitty ~/.config/kitty
